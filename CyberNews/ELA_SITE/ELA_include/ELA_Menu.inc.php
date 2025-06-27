@@ -45,6 +45,6 @@
     </ul>
     <?php
             $ELA_Categorie = $ELA_TableCategorie->fetch_assoc();
-        } 
+        
     ?>
 </nav>
