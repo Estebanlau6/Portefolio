@@ -22,7 +22,7 @@
 			<h2>Présentation du site</h2>
 			<p>Ce site a pour objectif de vous présenter les news les plus importantes de ces derniers mois en matière de cybersécurité.</p>
 			<p>Les news présentées traitent plus particulièrement de la cybersécurité autour des données personnelles.</p>
-			<p>Ce site fera l'objet d'une actualisation mensuel.</p>
+			<p>Ce site fera l'objet d'une actualisation mensuelle.</p>
 		</article>
 	   </div>
 	  </body>
