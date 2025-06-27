@@ -2,7 +2,7 @@
     <h2>Liste des news</h2>
     <?php
         //Récupéré toutes les informations des catégories depuis la base de donnée
-        $ELA_connexion = mysqli_connect("localhost", "root", "", "sitecybernews");
+        $ELA_connexion = mysqli_connect("127.0.0.1", "root", "", "sitecybernews");
         $ELA_connexion->set_charset("utf8");
         $ELA_requeteCategorie = "SELECT NomCategorie, idCategorie FROM categorie ORDER BY NomCategorie ASC";
         $ELA_TableCategorie = $ELA_connexion->query($ELA_requeteCategorie);
