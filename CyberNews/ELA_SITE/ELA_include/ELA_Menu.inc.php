@@ -5,8 +5,8 @@
         $mysqli = mysqli_connect(
             'containers-us-west-xxx.railway.app', // host Railway
             'root',                               // user Railway
-            'TON_MOT_DE_PASSE',                   // mot de passe Railway
-            'nom_de_ta_base',                     // nom de ta base
+            'eTIVsWmfkABFpEMFcLzgwnwFELwngGtU',                   // mot de passe Railway
+            'railway',                     // nom de ta base
             3306                                  // port Railway
         );
 
