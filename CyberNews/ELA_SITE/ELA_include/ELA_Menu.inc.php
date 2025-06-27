@@ -3,13 +3,12 @@
     <?php
         // Connexion à la base de données Railway
         $mysqli = mysqli_connect(
-            'containers-us-west-xxx.railway.app', // host Railway
-            'root',                               // user Railway
-            'eTIVsWmfkABFpEMFcLzgwnwFELwngGtU',                   // mot de passe Railway
-            'railway',                     // nom de ta base
-            3306                                  // port Railway
+        'metro.proxy.rlwy.net',  // host public
+        'root',                  // utilisateur
+        'eTIVsWmfkABFpEMFcLzgwnwFELwngGtU',      // mot de passe exact Railway
+        'railway',               // base de données
+        47246                    // port donné par Railway
         );
-
         // Vérifie la connexion
         if (!$mysqli) {
             die("Erreur de connexion à la base de données : " . mysqli_connect_error());
