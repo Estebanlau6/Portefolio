@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rectorat – Esteban Laurent</title>
+  <link href="Style.css" rel="stylesheet" />
+</head>
+<body>
+
+<header>
+  <h1>Esteban Laurent</h1>
+  <p>Étudiant en BTS SIO SLAM</p>
+</header>
+
+<nav class="navbar">
+  <ul class="navbar-nav">
+    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+    <li class="nav-item"><a class="nav-link" href="MonSite.html">Mon site de cybernews</a></li>
+    <li class="nav-item"><a class="nav-link" href="rectorats.html">Rectorat</a></li>
+  </ul>
+</nav>
+<section id="apropos">
+  <h2>À propos</h2>
+  <p>Je suis étudiant en BTS SIO option SLAM à Sotteville-lès-Rouen. Passionné par la création de sites web et le développement logiciel, je travaille principalement avec HTML, CSS, JavaScript, PHP et MySQL.</p>
+</section>
+
+<section id="cv">
+  <h2>Mon CV</h2>
+
+  <h4>Informations personnelles</h4>
+  <ul>
+    <li><strong>Nom :</strong> Esteban Laurent</li>
+    <li><strong>Adresse :</strong> Sotteville-lès-Rouen</li>
+    <li><strong>Permis :</strong> B</li>
+    <li><strong>Email :</strong> 06.14.63.24.67</li>
+    <li><strong>Téléphone :</strong> laurentesteban321@gmail.com</li>
+  </ul>
+
+  <h4>Objectif</h4>
+  <p>Rejoindre une entreprise où je peux développer mes compétences en programmation, participer à des projets concrets et évoluer dans un environnement technique motivant.</p>
+
+  <h4>Formation</h4>
+  <ul>
+    <li><strong>2023–2025 :</strong> BTS SIO option SLAM – Lycée La Chataigneraie</li>
+    <li><strong>2024 :</strong> Bac général spécialités SES & Mathématiques</li>
+  </ul>
+
+  <h4>Expériences</h4>
+  <ul>
+    <li><strong>Juin 2024 :</strong> Stage en développement – Création de pages dynamiques en PHP</li>
+    <li><strong>Décembre 2023 :</strong> Projet scolaire : application Python de gestion de contacts</li>
+  </ul>
+
+  <h4>Compétences</h4>
+  <ul>
+    <li>HTML / CSS</li>
+    <li>JavaScript</li>
+    <li>PHP / MySQL / SQLServer</li>
+    <li>Python (bases)</li>
+    <li>Git / GitHub</li>
+    <li>Linux (utilisation basique)</li>
+  </ul>
+
+
+<h4>Certifications</h4>
+<div class="certifications-container">
+  <div class="card">
+    <h4>Certification RGPD</h4>
+    <p>5 copies d'écran disponibles</p>
+    <button class="btn-certif" data-target="rgpd">Voir</button>
+
+    <div class="pdf-gallery hidden" data-gallery="rgpd" style="margin-top: 15px;">
+      <iframe src="certifs/RGPD/Certificat1_.pdf"></iframe>
+      <iframe src="certifs/RGPD/Certificat2.pdf"></iframe>
+      <iframe src="certifs/RGPD/Certificat3_.pdf"></iframe>
+      <iframe src="certifs/RGPD/Certificat4_.pdf"></iframe>
+      <iframe src="certifs/RGPD/Certificat5_.pdf"></iframe>
+    </div>
+  </div>
+  <div class="card">
+    <h4>Certification ANSSI</h4>
+    <p>PDF consultable</p>
+    <button class="btn-certif" data-target="anssi">Voir</button>
+
+    <div class="pdf-gallery hidden" data-gallery="anssi" style="margin-top: 15px;">
+      <iframe src="certifs/anssi.pdf"></iframe>
+    </div>
+  </div>
+    <div class="card">
+    <h4>Certification PIX</h4>
+    <p>700 points obtenus</p>
+    </div>
+</div>
+</section>
+
+<script>
+  document.querySelectorAll('.btn-certif').forEach(button => {
+  button.addEventListener('click', () => {
+    const target = button.getAttribute('data-target');
+    if (!target) return;
+
+    const galleries = document.querySelectorAll('.pdf-gallery');
+    const targetGallery = document.querySelector(`.pdf-gallery[data-gallery="${target}"]`);
+
+    galleries.forEach(gallery => {
+      if (gallery !== targetGallery) {
+        gallery.classList.add('hidden');
+      }
+    });
+
+    const isHidden = targetGallery.classList.contains('hidden');
+
+    if (isHidden) {
+      targetGallery.classList.remove('hidden');
+      button.textContent = 'Fermer';
+    } else {
+      targetGallery.classList.add('hidden');
+      button.textContent = 'Voir';
+    }
+  });
+});
+</script>
+<button id="toggle-theme" title="Changer le thème">
+  🌙
+</button>
+<script>
+  const btn = document.getElementById('toggle-theme');
+  const body = document.body;
+
+  // Charge le thème stocké en localStorage si présent
+  if (localStorage.getItem('theme') === 'light') {
+    body.classList.add('light-theme');
+    btn.textContent = '🌞';
+  }
+
+  btn.addEventListener('click', () => {
+    body.classList.toggle('light-theme');
+    if (body.classList.contains('light-theme')) {
+      btn.textContent = '🌞';
+      localStorage.setItem('theme', 'light');
+    } else {
+      btn.textContent = '🌙';
+      localStorage.setItem('theme', 'dark');
+    }
+  });
+</script>
+</body>
+</html>
