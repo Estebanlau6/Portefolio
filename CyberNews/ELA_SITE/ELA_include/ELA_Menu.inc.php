@@ -2,48 +2,36 @@
     <h2>Liste des news</h2>
     <?php
         // Connexion à la base de données Railway
-        $mysqli = mysqli_connect(
-        'metro.proxy.rlwy.net',  // host public
-        'root',                  // utilisateur
-        'eTIVsWmfkABFpEMFcLzgwnwFELwngGtU',      // mot de passe exact Railway
-        'railway',               // base de données
-        47246                    // port donné par Railway
+        $ELA_connexion = mysqli_connect(
+            'metro.proxy.rlwy.net',
+            'root',
+            'eTIVsWmfkABFpEMFcLzgwnwFELwngGtU',
+            'railway',
+            47246
         );
-        // Vérifie la connexion
-        if (!$mysqli) {
+
+        if (!$ELA_connexion) {
             die("Erreur de connexion à la base de données : " . mysqli_connect_error());
         }
 
-        $mysqli->set_charset("utf8");
+        $ELA_connexion->set_charset("utf8");
 
+        // Récupération des catégories
         $ELA_requeteCategorie = "SELECT NomCategorie, idCategorie FROM categorie ORDER BY NomCategorie ASC";
-        $ELA_TableCategorie = $mysqli->query($ELA_requeteCategorie);
+        $ELA_TableCategorie = $ELA_connexion->query($ELA_requeteCategorie);
 
-        $ELA_Categorie = $ELA_TableCategorie->fetch_assoc();
-
-        // Afficher toutes les catégories
-        while ($ELA_Categorie) {
+        while ($ELA_Categorie = $ELA_TableCategorie->fetch_assoc()) {
             echo "<h3>" . $ELA_Categorie["NomCategorie"] . "</h3>";
-            $ELA_Categorie = $ELA_TableCategorie->fetch_assoc();
-        }
-    ?>
 
-    <ul>
-        <?php
-            //Récupéré toutes les informations des news depuis la base de donnée
-            $ELA_requeteNews = "SELECT idNews, NomNews FROM news WHERE idCategorie=" . $ELA_Categorie["idCategorie"] ;
+            echo "<ul>";
+            // Récupération des news associées à cette catégorie
+            $ELA_requeteNews = "SELECT idNews, NomNews FROM news WHERE idCategorie=" . $ELA_Categorie["idCategorie"];
             $ELA_TableNews = $ELA_connexion->query($ELA_requeteNews);
 
-            $ELA_News = $ELA_TableNews->fetch_assoc();
-            //Afficher toutes les news 
-            while ($ELA_News) {
+            while ($ELA_News = $ELA_TableNews->fetch_assoc()) {
                 echo "<li><a href='ELA_NEWS.php?idNews=" . $ELA_News["idNews"] . "'>" . $ELA_News["NomNews"] . "</a></li>";
-                $ELA_News = $ELA_TableNews->fetch_assoc();
             }
-        ?>
-    </ul>
-    <?php
-            $ELA_Categorie = $ELA_TableCategorie->fetch_assoc();
-        
+            echo "</ul>";
+        }
     ?>
 </nav>
