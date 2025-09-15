@@ -1,0 +1,429 @@
+body {
+  background-color: #1e1e1e; /* gris très foncé, plus doux */
+  color: #cfcfcf;
+  /* le reste de tes styles... */
+}
+
+
+header {
+  padding: 3rem 1rem;
+  text-align: center;
+  background-color: #101010; /* plus sombre */
+  box-shadow: none; /* ombre supprimée pour sobriété */
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-weight: 600;
+  font-size: 2.5rem;
+  margin-bottom: 0.3rem;
+  color: #e0e0e0; /* un peu plus clair que le texte */
+}
+
+header p {
+  color: #999999; /* plus foncé, plus doux */
+  font-size: 1.1rem;
+  margin-bottom: 0;
+}
+
+nav.navbar {
+  background-color: #121212; /* sombre */
+  padding: 0.5rem 1rem;
+  margin-bottom: 3rem;
+  justify-content: center;
+  box-shadow: none;
+}
+
+nav.navbar .navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+nav.navbar .navbar-nav .nav-link {
+  color: #888888; /* plus sombre */
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+nav.navbar .navbar-nav .nav-link:hover,
+nav.navbar .navbar-nav .nav-link:focus {
+  color: #d1d1d1;
+  text-decoration: underline;
+}
+
+section {
+  max-width: 700px;
+  margin: 0 auto 4rem;
+  padding: 1rem 2rem;
+  background-color: #121212; /* sombre */
+  border-radius: 6px;
+  box-shadow: none;
+}
+
+section h2 {
+  font-weight: 600;
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+  border-bottom: 1.5px solid #333333;
+  padding-bottom: 0.3rem;
+  color: #ddd;
+}
+
+ul {
+  padding-left: 1.2rem;
+  color: #bbb;
+}
+
+ul li {
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+h5 {
+  margin-top: 2rem;
+  font-weight: 600;
+  color: #999;
+}
+
+/* Pour les liens dans le contenu */
+a {
+  color: #5599ff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #77aaff;
+}
+
+/* Mode clair */
+body.light-theme {
+  background-color: #f9f9f9; /* clair */
+  color: #222; /* texte bien sombre */
+}
+
+
+body.light-theme header {
+  background-color: #eee;
+  color: #222;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+body.light-theme header h1,
+body.light-theme header p {
+  color: #222; /* bien sombre */
+}
+
+
+
+body.light-theme nav.navbar {
+  background-color: #ddd;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+body.light-theme nav.navbar .navbar-nav .nav-link {
+  color: #555;
+}
+
+body.light-theme nav.navbar .navbar-nav .nav-link:hover,
+body.light-theme nav.navbar .navbar-nav .nav-link:focus {
+  color: #000;
+}
+
+body.light-theme section {
+  background-color: #fff;
+  color: #222;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+body.light-theme h2, 
+body.light-theme h5, 
+body.light-theme ul li {
+  color: #333;
+}
+
+body.light-theme a {
+  color: #0066cc;
+}
+
+body.light-theme a:hover {
+  color: #004999;
+}
+
+/* Transition douce */
+body, header, nav.navbar, section {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#toggle-theme {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #222;
+  color: #eee;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
+  font-size: 1.2rem;
+  z-index: 1000;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#toggle-theme:hover {
+  background-color: #555;
+  color: #fff;
+}
+
+.certif-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.certif-card {
+  background-color: #1a1a1a;
+  color: #eee;
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 1.2rem;
+  width: 280px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.certif-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
+}
+
+.certif-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.certif-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+body.light-theme .certif-card {
+  background-color: #f1f1f1;
+  color: #111;
+}
+
+body.light-theme .certif-card p {
+  color: #555;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+/* Style par défaut (sombre) */
+.card {
+  background-color: #1e1e1e;
+  color: #eee;
+  padding: 1.2rem 1.5rem;
+  border-radius: 10px;
+  width: 250px;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease, background-color 0.3s, color 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  background-color: #292929;
+  transform: scale(1.03);
+}
+
+/* Mode clair */
+body.light-theme .card {
+  background-color: #f1f1f1;
+  color: #222;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+body.light-theme .card:hover {
+  background-color: #e2e2e2;
+}
+
+.certifications-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+  align-items: flex-start; /* au lieu de stretch */
+
+}
+
+.card {
+  background-color: var(--card-bg, #1e1e1e);
+  padding: 1rem;
+  border-radius: 12px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h4 {
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.btn-certif {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #4c8ef7;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  margin-top: 0.5rem;
+}
+
+.btn-certif:hover {
+  background-color: #6ea7ff;
+}
+
+.card.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.btn-certif.inactive {
+  background-color: #666;
+  cursor: not-allowed;
+}
+
+.pdf-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+  transition: opacity 0.5s ease;
+  opacity: 1;
+}
+
+.pdf-gallery iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.pdf-gallery iframe:hover {
+  transform: scale(1.03);
+}
+
+/* Animation d’apparition */
+.pdf-gallery.hidden {
+  opacity: 0;
+  pointer-events: none;
+  height: 0;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  transition: opacity 0.5s ease, height 0.3s ease;
+}
+
+.interets-list {
+  list-style: none;
+  padding: 0;
+}
+
+.interets-list li {
+  font-size: 1.1em;
+  margin: 6px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.interets-list i {
+  color: #ffcc00; /* tu peux changer la couleur pour matcher ton thème */
+  font-size: 1.2em;
+}
+/* Mode clair pour les centres d'intérêts */
+body.light-theme .interets-list li {
+  color: #333;
+}
+body.light-theme .interets-list i {
+  color: #ff9900;
+}
+
+.stages-container {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: stretch; /* force la même hauteur */
+  flex-wrap: wrap;      /* responsive : passe en colonne si écran trop petit */
+  margin-top: 20px;
+  max-width: 900px;     /* largeur max du container */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card {
+  flex: 1 1 45%;        /* 2 cartes côte à côte */
+  background: #f0f0f0;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 15px;
+}
+
+
+/* prévisualisation en format A4 */
+.attestation embed {
+  width: 100%;
+  aspect-ratio: 210 / 297; /* ratio A4 */
+  border: 1px solid #444;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.btn-retour {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 8px 15px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.btn-retour:hover {
+  background-color: #555;
+}

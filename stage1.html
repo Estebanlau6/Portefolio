@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stage – Esteban Laurent</title>
+  <link href="Style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<header>
+  <h1>Esteban Laurent</h1>
+  <p>Étudiant en BTS SIO SLAM</p>
+</header>
+
+<nav class="navbar">
+  <ul class="navbar-nav">
+    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+    <li class="nav-item"><a class="nav-link" href="MonSite.html">Mon site de cybernews</a></li>
+    <li class="nav-item"><a class="nav-link" href="rectorats.html">Rectorat</a></li>
+    <li class="nav-item"><a class="nav-link" href="realisations.html">Réalisation</a></li>
+  </ul>
+</nav>
+
+<section id="stage">
+  <a href="realisations.html" class="btn-retour"><i class="fas fa-arrow-left"></i> Retour aux réalisations</a>
+
+  <h2>Mon Stage à la DSI de l'Université de Rouen</h2>
+
+  <h3>1. Contexte du stage</h3>
+  <p>
+    Dans le cadre de mon BTS SIO SLAM, j'ai effectué un stage de 5 semaines au sein de la Direction des Systèmes d’Information (DSI) de l’Université de Rouen. 
+    Ce stage avait pour objectif de mettre en pratique mes compétences en développement et de découvrir le fonctionnement réel d'une DSI.
+    J’ai participé à la conception et au développement d’applications internes, en lien direct avec mon option SLAM, et j’ai pu acquérir une première expérience professionnelle concrète.
+  </p>
+
+  <h3>2. Présentation de l’entreprise</h3>
+  <p>
+    La DSI est le service informatique central de l’Université de Rouen. Elle assure la gestion des réseaux, la maintenance des équipements, la sécurité des systèmes et le développement d’applications internes. 
+    L’équipe de développement compte une vingtaine de personnes, incluant des alternants et stagiaires. Mon rôle était d’assister cette équipe et de contribuer à l’amélioration d’une application interne.
+  </p>
+
+  <h4>Environnement technologique</h4>
+  <ul>
+    <li>Langages : Java, JavaScript, HTML/CSS, SQL</li>
+    <li>Frameworks : Spring Boot, Thymeleaf, Vue.js ou React selon les projets</li>
+    <li>SGBD : PostgreSQL</li>
+    <li>Outils : IntelliJ IDEA Ultimate, Git / GitLab</li>
+  </ul>
+
+  <h3>3. Organisation et outils de travail</h3>
+  <p>
+    Dès le début du stage, ma mission m’a été présentée via l’application sur laquelle je devais travailler. 
+    Je partageais un bureau avec un collègue et pouvais facilement solliciter Robin pour des questions, ou communiquer via Rocket.chat.
+    J’ai également assisté à deux réunions importantes : l’une sur l’utilisation d’une nouvelle application et l’autre sur un système d’authentification à deux facteurs.
+  </p>
+
+  <h3>4. Missions réalisées</h3>
+  <p>
+    Mon principal projet a été l’amélioration de l’ergonomie d’une application Java existante, appelée <em>historique-rh</em>, qui permet de consulter l’historique des employés de l’université.
+    L’application utilisait Spring Boot et Thymeleaf côté serveur, et HTML/CSS/JS côté client. 
+    J’ai corrigé des bugs, amélioré l’interface et ajouté des fonctionnalités comme l’autocomplétion dans la recherche.
+  </p>
+
+  <h4>Autocomplétion</h4>
+  <p>
+    Cette fonctionnalité permet de proposer automatiquement des suggestions lors de la saisie. 
+    J’ai dû apprendre à créer des Controllers en Java pour récupérer les préfixes dans la base de données, et adapter le front pour que l’autocomplétion reste ergonomique (affichage limité à 5-6 suggestions).
+  </p>
+
+  <h4>Outils et technologies utilisés</h4>
+  <ul>
+    <li>Java / Spring Boot / Thymeleaf</li>
+    <li>HTML, CSS, JavaScript</li>
+    <li>Bootstrap pour l’interface</li>
+    <li>IntelliJ IDEA, Git / GitLab</li>
+  </ul>
+
+  <h3>5. Bilan</h3>
+  <p>
+    Ce stage m’a permis de mettre en pratique mes connaissances théoriques, de découvrir le fonctionnement concret d’une DSI et d’améliorer mes compétences en développement web et Java. 
+    J’ai également gagné en autonomie, en organisation et en communication professionnelle.
+  </p>
+
+</section>
+
+<script>
+  const btn = document.getElementById('toggle-theme');
+  const body = document.body;
+
+  if (localStorage.getItem('theme') === 'light') {
+    body.classList.add('light-theme');
+    btn.textContent = '🌞';
+  }
+
+  btn.addEventListener('click', () => {
+    body.classList.toggle('light-theme');
+    if (body.classList.contains('light-theme')) {
+      btn.textContent = '🌞';
+      localStorage.setItem('theme', 'light');
+    } else {
+      btn.textContent = '🌙';
+      localStorage.setItem('theme', 'dark');
+    }
+  });
+</script>
+<button id="toggle-theme" title="Changer le thème">🌙</button>
+
+</body>
+</html>
